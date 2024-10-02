@@ -1,26 +1,40 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter } from "react-router-dom";
 
-function App() {
+import { AppThemeProvider, AuthProvider, DrawerProvider } from "./shared/contexts";
+import { Login, MenuLateral } from "./shared/components";
+import { AppRoutes } from "./routes";
+import './shared/form/TraducaoYup';
+import './App.css'
+import './fonts/Poppins-Black.ttf';
+import './fonts/Poppins-BlackItalic.ttf';
+import './fonts/Poppins-Bold.ttf';
+import './fonts/Poppins-BoldItalic.ttf';
+import './fonts/Poppins-ExtraBold.ttf';
+import './fonts/Poppins-ExtraBoldItalic.ttf';
+import './fonts/Poppins-ExtraLight.ttf';
+import './fonts/Poppins-ExtraLightItalic.ttf';
+import './fonts/Poppins-Italic.ttf';
+
+export const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AuthProvider>
+      <AppThemeProvider >
+
+        <Login>
+
+          <DrawerProvider >
+            <BrowserRouter>
+
+              <MenuLateral>
+                <AppRoutes />
+              </MenuLateral>
+              
+            </BrowserRouter>
+          </DrawerProvider>
+
+        </Login>
+
+      </AppThemeProvider>
+    </AuthProvider>
   );
 }
-
-export default App;
