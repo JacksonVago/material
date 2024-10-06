@@ -226,6 +226,7 @@ export const DetalheGrupo: React.FC = () => {
         reg:0,
     });
 
+      
     const handleSubmit = async (values: Grupo) => {
         console.log('submit');
         // try {
@@ -292,16 +293,31 @@ export const DetalheGrupo: React.FC = () => {
         enableReinitialize: true,
     });
 
-
     useEffect(() => {
-        console.log(location.state);
-        if (id !== '0') {
-            setRow(JSON.parse(location.state));
-            //formik.setValues(row);
-            console.log(row);
-        }
-        setIsLoading(false);
-    }, []);
+        (async () => {
+            console.log(location.state);
+            if (id !== '0') {
+                setRow(JSON.parse(location.state));
+                //formik.setValues(row);
+                console.log(row);
+            }
+            setIsLoading(false);
+            const devices = await navigator.mediaDevices.enumerateDevices();
+            const videoDevices = devices.filter((i) => i.kind == 'videoinput');
+            setDevices(videoDevices);
+            })();
+      });
+    
+    // useEffect(() => {
+    //     console.log(location.state);
+    //     if (id !== '0') {
+    //         setRow(JSON.parse(location.state));
+    //         //formik.setValues(row);
+    //         console.log(row);
+    //     }
+    //     setIsLoading(false);
+  
+    // }, []);
 
     const handleBack = () => {
         navigate('/grupos');
