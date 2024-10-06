@@ -228,22 +228,22 @@ export const DetalheGrupo: React.FC = () => {
 
     const handleSubmit = async (values: Grupo) => {
         console.log('submit');
-        try {
-            console.log('handleSubmit');
-            console.log('id empo: ', id_emp);
-            console.log(values);
-            setRow(values);
-            setTitulo('Manutenção de Grupos');
-            setMsg(`Confirma a ${(row.id === 0 ? " inclusão " : " alteração ")} do Grupo ${values.str_descricao} ?`)
-            setShowOk(true);
-            setShowCancel(true);
-            setTextCancel("Cancelar");
-            setOpen(true);
+        // try {
+        //     console.log('handleSubmit');
+        //     console.log('id empo: ', id_emp);
+        //     console.log(values);
+        //     setRow(values);
+        //     setTitulo('Manutenção de Grupos');
+        //     setMsg(`Confirma a ${(row.id === 0 ? " inclusão " : " alteração ")} do Grupo ${values.str_descricao} ?`)
+        //     setShowOk(true);
+        //     setShowCancel(true);
+        //     setTextCancel("Cancelar");
+        //     setOpen(true);
 
-        } catch (error) {
-            // Handle form submission error
-            console.error(error);
-        }
+        // } catch (error) {
+        //     // Handle form submission error
+        //     console.error(error);
+        // }
     };
 
     const handleSaveClose = () => {
