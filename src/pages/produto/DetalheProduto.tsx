@@ -13,7 +13,7 @@ import * as Yup from 'yup';
 
 import { FerramentaDetalhes } from "../../shared/components";
 import { LayoutBasePage } from "../../shared/layouts";
-import { Camera, CameraType } from "react-camera-pro";
+//import { Camera, CameraType } from "react-camera-pro";
 import styled from 'styled-components';
 import { Environment } from "../../shared/environment";
 import { IProdutosAddCombo, Produto, ProdutosService } from "../../shared/services/produtos/ProdutosService";
@@ -262,7 +262,7 @@ export const DetalheProduto: React.FC = () => {
     const [numberOfCameras, setNumberOfCameras] = useState(0);
     const [image, setImage] = useState<string | null>(null);
     const [showImage, setShowImage] = useState<boolean>(false);
-    const camera = useRef<CameraType>(null);
+    //const camera = useRef<CameraType>(null);
     const [devices, setDevices] = useState<MediaDeviceInfo[]>([]);
     const [activeDeviceId, setActiveDeviceId] = useState<string | undefined>(undefined);
     const [torchToggled, setTorchToggled] = useState<boolean>(false);
