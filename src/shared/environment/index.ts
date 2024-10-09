@@ -19,9 +19,9 @@ export const Environment = {
      * URL base 
      * URL_BASE: 'https://localhost:44368',
      * * URL_BASE: 'https://localhost:44368', docker
-     * URL_BASE: 'http://34.230.73.216', AWS
+     * URL_BASE: 'http://98.82.34.72', AWS
      */    
-    URL_BASE: 'https://localhost:44368',
+    URL_BASE: 'http://35.174.17.110',
 
     /**
      * Token
